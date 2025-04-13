@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
+
 public class GameInstaller : MonoInstaller
 {
     [SerializeField] private GameSettings _gameSettings;

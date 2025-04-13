@@ -1,5 +1,7 @@
 ﻿using Zenject;
 
+// Обрабатывает клики игрока, работает через Zenject
+
 public class ClickController
 {
     private GameData _gameData;

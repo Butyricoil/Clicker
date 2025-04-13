@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Zenject;
 
+// Покупает улучшения, работает через IInitializable
+
 public class UpgradeController
 {
     private GameData _gameData;

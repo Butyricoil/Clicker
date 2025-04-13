@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Zenject;
 
+//Сохраняет/загружает данные, работает через Zenject
+
 public class SaveController : IInitializable, ITickable
 {
     private GameData _gameData;

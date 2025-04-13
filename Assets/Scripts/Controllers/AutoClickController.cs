@@ -1,6 +1,8 @@
 ﻿using Zenject;
 using UnityEngine;
 
+// Обрабатывает auto-клики игрока, работает через Zenject
+
 public class AutoClickController : ITickable
 {
     private GameData _gameData;
