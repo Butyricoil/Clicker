@@ -35,7 +35,7 @@ public class UpgradeController
         }
     }
 
-    private void UpdateUpgradeButton()g
+    private void UpdateUpgradeButton()
     {
         int cost = GetUpgradeCost();
         _upgradeView.SetUpgradeButtonState(

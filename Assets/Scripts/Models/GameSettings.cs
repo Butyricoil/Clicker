@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// Это класс для хранения баланса игры. привязан к DependencyContainer
+
 [CreateAssetMenu(fileName = "GameSettings", menuName = "Clicker/GameSettings")]
 public class GameSettings : ScriptableObject
 {

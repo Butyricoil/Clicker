@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
+// Показывает количество кликов в тексте, привязан к ClickView
 public class ClickView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _clicksTotalText;

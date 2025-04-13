@@ -1,6 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 
+// Показывает уровень и скорость авто-кликов, привязн к View
+
 public class AutoClickView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _autoClickRateText;

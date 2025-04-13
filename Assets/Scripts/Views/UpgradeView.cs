@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Управляет кнопкой улучшения, привязан к Button View
+
 public class UpgradeView : MonoBehaviour
 {
     [SerializeField] private Button _upgradeButton;
