@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-
+// привязан к DependencyContainer
 public class GameInstaller : MonoInstaller
 {
     [SerializeField] private GameSettings _gameSettings;

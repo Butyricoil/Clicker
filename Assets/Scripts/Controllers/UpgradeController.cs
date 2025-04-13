@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-// Покупает улучшения, работает через IInitializable
+// Покупает улучшения, работает через Zenject
 
 public class UpgradeController
 {
