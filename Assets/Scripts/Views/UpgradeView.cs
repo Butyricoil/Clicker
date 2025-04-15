@@ -2,18 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Управляет кнопкой улучшения, привязан к Button View
-
 public class UpgradeView : MonoBehaviour
 {
     [SerializeField] private Button _upgradeButton;
-    [SerializeField] private TMP_Text _upgradeButtonText;
+    [SerializeField] private TMP_Text _upgradeText;
 
-    public Button.ButtonClickedEvent OnUpgradeClicked => _upgradeButton.onClick;
+    public Button UpgradeButton => _upgradeButton;
 
-    public void SetUpgradeButtonState(bool canUpgrade, int cost)
+    public void UpdateUpgradeInfo(int cost, bool canAfford)
     {
-        _upgradeButton.interactable = canUpgrade;
-        _upgradeButtonText.text = $"Upgrade Auto-click\nCost: {cost}";
+        _upgradeText.text = $"Upgrade ({cost})";
+        _upgradeButton.interactable = canAfford;
     }
 }

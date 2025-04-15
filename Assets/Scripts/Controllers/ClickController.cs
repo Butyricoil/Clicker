@@ -1,22 +1,16 @@
 ﻿using Zenject;
 
-// Обрабатывает клики игрока, работает через Zenject
-
-public class ClickController
+public class ClickerController
 {
-    private GameData _gameData;
-    private ClickView _clickView;
+    private readonly GameModel _model;
 
-    [Inject]
-    public void Construct(GameData gameData, ClickView clickView)
+    public ClickerController(GameModel model)
     {
-        _gameData = gameData;
-        _clickView = clickView;
+        _model = model;
     }
 
     public void AddClick()
     {
-        _gameData.TotalClicks++;
-        _clickView.UpdateClicks(_gameData.TotalClicks);
+        _model.AddClick();
     }
 }

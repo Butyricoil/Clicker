@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 
-// Это класс для хранения баланса игры. привязан к DependencyContainer
-
-[CreateAssetMenu(fileName = "GameSettings", menuName = "Clicker/GameSettings")]
+[CreateAssetMenu(menuName = "GameSettings")]
 public class GameSettings : ScriptableObject
 {
-    public int AutoClicksPerSecond = 1;
-    public int BaseUpgradeCost = 50;
+    public int BaseUpgradeCost = 10;
     public float UpgradeCostMultiplier = 1.5f;
 }

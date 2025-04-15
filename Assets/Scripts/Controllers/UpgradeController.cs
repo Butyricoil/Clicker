@@ -1,54 +1,32 @@
-﻿using UnityEngine;
-using Zenject;
-
-// Покупает улучшения, работает через Zenject
+﻿using Zenject;
 
 public class UpgradeController
 {
-    private GameData _gameData;
-    private GameSettings _settings;
-    private UpgradeView _upgradeView;
-    private AutoClickController _autoClickController;
+    private readonly GameModel _model;
+    private readonly GameSettings _settings;
 
-    [Inject]
-    public void Construct(
-        GameData gameData,
-        GameSettings settings,
-        UpgradeView upgradeView,
-        AutoClickController autoClickController)
+    public UpgradeController(GameModel model, GameSettings settings)
     {
-        _gameData = gameData;
+        _model = model;
         _settings = settings;
-        _upgradeView = upgradeView;
-        _autoClickController = autoClickController;
-
-        _upgradeView.OnUpgradeClicked.AddListener(OnUpgradeClicked);
-        UpdateUpgradeButton();
     }
 
-    private void OnUpgradeClicked()
-    {
-        int cost = GetUpgradeCost();
-        if (_gameData.TotalClicks >= cost)
-        {
-            _gameData.TotalClicks -= cost;
-            _autoClickController.Upgrade();
-            UpdateUpgradeButton();
-        }
-    }
-
-    private void UpdateUpgradeButton()
-    {
-        int cost = GetUpgradeCost();
-        _upgradeView.SetUpgradeButtonState(
-            _gameData.TotalClicks >= cost,
-            cost
-        );
-    }
-
-    private int GetUpgradeCost()
+    public int GetUpgradeCost()
     {
         return (int)(_settings.BaseUpgradeCost *
-                     Mathf.Pow(_settings.UpgradeCostMultiplier, _gameData.AutoClickLevel));
+                     System.Math.Pow(_settings.UpgradeCostMultiplier, _model.UpgradeLevel));
+    }
+
+    public bool CanUpgrade()
+    {
+        return _model.ClicksCount >= GetUpgradeCost();
+    }
+
+    public void Upgrade()
+    {
+        if (CanUpgrade())
+        {
+            _model.Upgrade(GetUpgradeCost());
+        }
     }
 }

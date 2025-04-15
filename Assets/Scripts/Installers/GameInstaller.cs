@@ -1,29 +1,26 @@
 ﻿using UnityEngine;
 using Zenject;
 
-// привязан к DependencyContainer
 public class GameInstaller : MonoInstaller
 {
-    [SerializeField] private GameSettings _gameSettings;
-    [SerializeField] private ClickView _clickView;
-    [SerializeField] private AutoClickView _autoClickView;
+    [SerializeField] private GameSettings _settings;
+    [SerializeField] private ClickerView _clickerView;
     [SerializeField] private UpgradeView _upgradeView;
 
     public override void InstallBindings()
     {
-        // Биндим данные и настройки
-        Container.Bind<GameData>().AsSingle();
-        Container.Bind<GameSettings>().FromInstance(_gameSettings).AsSingle();
+        // Bind model
+        Container.Bind<GameModel>().AsSingle().NonLazy();
 
-        // Биндим View
-        Container.Bind<ClickView>().FromInstance(_clickView).AsSingle();
-        Container.Bind<AutoClickView>().FromInstance(_autoClickView).AsSingle();
-        Container.Bind<UpgradeView>().FromInstance(_upgradeView).AsSingle();
+        // Bind settings
+        Container.BindInstance(_settings);
 
-        // Биндим контроллеры
-        Container.Bind<ClickController>().AsSingle();
-        Container.Bind<AutoClickController>().AsSingle();
-        Container.Bind<UpgradeController>().AsSingle();
-        Container.Bind<SaveController>().AsSingle().NonLazy();
+        // Bind views
+        Container.BindInstance(_clickerView);
+        Container.BindInstance(_upgradeView);
+
+        // Bind controllers
+        Container.BindInterfacesAndSelfTo<ClickerController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<UpgradeController>().AsSingle();
     }
 }

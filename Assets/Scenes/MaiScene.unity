@@ -996,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 1663172197}
+  - {fileID: 1663172199}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1111,19 +1111,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1220042921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1220042921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,7 +1295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663172198}
-  - component: {fileID: 1663172197}
+  - component: {fileID: 1663172199}
   m_Layer: 0
   m_Name: DependencyContainer
   m_TagString: Untagged
@@ -1315,22 +1303,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1663172197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663172196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726fb1a3f1934d7cb63663d12876689f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameSettings: {fileID: 11400000, guid: c2bd1e75c89c8e244b5df19019040ef1, type: 2}
-  _clickView: {fileID: 1754734211}
-  _autoClickView: {fileID: 1754734210}
-  _upgradeView: {fileID: 1754734209}
 --- !u!4 &1663172198
 Transform:
   m_ObjectHideFlags: 0
@@ -1346,6 +1318,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663172199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663172196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726fb1a3f1934d7cb63663d12876689f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameSettings: {fileID: 11400000, guid: c2bd1e75c89c8e244b5df19019040ef1, type: 2}
+  _clickView: {fileID: 1754734211}
+  _autoClickView: {fileID: 1754734210}
+  _upgradeView: {fileID: 1754734209}
 --- !u!1 &1752789964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,9 +1568,9 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 321592747}
   - {fileID: 1102031407}
   - {fileID: 1663172198}
   - {fileID: 1754734212}
   - {fileID: 169489475}
   - {fileID: 1752789967}
+  - {fileID: 321592747}
