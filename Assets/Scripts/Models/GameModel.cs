@@ -5,13 +5,15 @@ public class GameModel
 {
     public int ClicksCount;
     public int UpgradeLevel;
+    public int ClicksPerTap = 1;
 
     public event Action<int> OnClicksChanged;
     public event Action<int> OnUpgradeChanged;
+    public event Action<int> OnClicksPerTapChanged;
 
     public void AddClick()
     {
-        ClicksCount++;
+        ClicksCount += ClicksPerTap;
         OnClicksChanged?.Invoke(ClicksCount);
     }
 
@@ -19,7 +21,9 @@ public class GameModel
     {
         ClicksCount -= cost;
         UpgradeLevel++;
+        ClicksPerTap++;
         OnClicksChanged?.Invoke(ClicksCount);
         OnUpgradeChanged?.Invoke(UpgradeLevel);
+        OnClicksPerTapChanged?.Invoke(ClicksPerTap);
     }
 }

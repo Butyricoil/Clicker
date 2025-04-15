@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeView : MonoBehaviour
+public class AddClicks : MonoBehaviour
 {
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private TMP_Text _upgradeText;

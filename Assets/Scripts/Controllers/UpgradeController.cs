@@ -1,5 +1,4 @@
-﻿using Zenject;
-
+﻿
 public class UpgradeController
 {
     private readonly GameModel _model;

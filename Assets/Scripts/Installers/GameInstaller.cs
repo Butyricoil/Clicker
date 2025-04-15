@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class GameInstaller : MonoInstaller
 {
     [SerializeField] private GameSettings _settings;
     [SerializeField] private ClickerView _clickerView;
-    [SerializeField] private UpgradeView _upgradeView;
+    [FormerlySerializedAs("_upgradeView")] [SerializeField] private AddClicks addClicks;
 
     public override void InstallBindings()
     {
@@ -17,7 +18,7 @@ public class GameInstaller : MonoInstaller
 
         // Bind views
         Container.BindInstance(_clickerView);
-        Container.BindInstance(_upgradeView);
+        Container.BindInstance(addClicks);
 
         // Bind controllers
         Container.BindInterfacesAndSelfTo<ClickerController>().AsSingle();

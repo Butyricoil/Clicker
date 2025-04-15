@@ -1,5 +1,4 @@
-﻿using Zenject;
-
+﻿
 public class ClickerController
 {
     private readonly GameModel _model;
