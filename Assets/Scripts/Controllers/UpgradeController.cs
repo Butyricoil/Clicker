@@ -12,8 +12,7 @@ public class UpgradeController
 
     public int GetUpgradeCost()
     {
-        return (int)(_settings.BaseUpgradeCost *
-                     System.Math.Pow(_settings.UpgradeCostMultiplier, _model.UpgradeLevel));
+        return (int)(_settings.BaseAddClickCost * System.Math.Pow(_settings.UpgradeCostMultiplier, _model.AddClickLevel));
     }
 
     public bool CanUpgrade()

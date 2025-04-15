@@ -4,13 +4,21 @@
 [Serializable]
 public class GameModel
 {
+    // Параметры кликов
     public int ClicksCount;
-    public int UpgradeLevel;
+    public int AddClickLevel;
     public int ClicksPerTap = 1;
 
+    // Параметры автоклика
+    public int AutoClickLevel;
+    public float AutoClickDelay = 1f;
+    public float LastAutoClickTime;
+
+    // События для обновления UI
     public event Action<int> OnClicksChanged;
     public event Action<int> OnUpgradeChanged;
     public event Action<int> OnClicksPerTapChanged;
+    public event Action<int> OnAutoClickUpgraded;
 
     public void AddClick()
     {
@@ -21,10 +29,22 @@ public class GameModel
     public void Upgrade(int cost)
     {
         ClicksCount -= cost;
-        UpgradeLevel++;
+        AddClickLevel++;
         ClicksPerTap++;
         OnClicksChanged?.Invoke(ClicksCount);
-        OnUpgradeChanged?.Invoke(UpgradeLevel);
+        OnUpgradeChanged?.Invoke(AddClickLevel);
         OnClicksPerTapChanged?.Invoke(ClicksPerTap);
+    }
+
+    public void UpgradeAutoClick(int cost)
+    {
+        ClicksCount -= cost;
+        AutoClickLevel++;
+        OnAutoClickUpgraded?.Invoke(AutoClickLevel);
+    }
+
+    public int GetAutoClicksAmount()
+    {
+        return AutoClickLevel * 2; // Например, 2 клика за уровень
     }
 }

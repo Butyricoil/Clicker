@@ -7,22 +7,27 @@ public class GameInstaller : MonoInstaller
 {
     [SerializeField] private GameSettings _settings;
     [SerializeField] private ClickerView _clickerView;
-    [FormerlySerializedAs("_upgradeView")] [SerializeField] private AddClicks addClicks;
+    [SerializeField] private AddClickView _addClickView;
+    [SerializeField] private AutoClickView _autoClickView;
+
 
     public override void InstallBindings()
     {
-        // Bind model
+        // Биндим модель игры
         Container.Bind<GameModel>().AsSingle().NonLazy();
 
-        // Bind settings
+        // Биндим настройки игры
         Container.BindInstance(_settings);
 
-        // Bind views
+        // Биндим представления
         Container.BindInstance(_clickerView);
-        Container.BindInstance(addClicks);
+        Container.BindInstance(_addClickView);
+        Container.BindInstance(_autoClickView);
 
-        // Bind controllers
+        // Биндим контроллеры
         Container.BindInterfacesAndSelfTo<ClickerController>().AsSingle();
         Container.BindInterfacesAndSelfTo<UpgradeController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<AutoClickController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<AutoClickUpgradeController>().AsSingle();
     }
 }

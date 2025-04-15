@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a6b1d9a63142db965ea077830b7623, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  AutoClicksPerSecond: 1
-  BaseUpgradeCost: 50
+  BaseUpgradeCost: 10
   UpgradeCostMultiplier: 1.5
+  BaseClicksPerTap: 1

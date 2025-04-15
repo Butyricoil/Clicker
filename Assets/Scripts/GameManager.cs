@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
             _totalClicks -= _nextUpgradeCost;
             _hasUpgrade = true;
             _currentUpgradeLevel++;
-            _nextUpgradeCost = (int)(minimumClicksToUnlock * Mathf.Pow(upgradeCostMultiplier, _currentUpgradeLevel));
+            _nextUpgradeCost = (int)(minimumClicksToUnlock *
+                                     Mathf.Pow(upgradeCostMultiplier, _currentUpgradeLevel));
             UpdateUI();
         }
     }
@@ -61,7 +62,8 @@ public class GameManager : MonoBehaviour
 
         if (_hasUpgrade)
         {
-            autoClickRateText.text = $"Auto-click: {autoClicksPerSecond * _currentUpgradeLevel}/sec (Level {_currentUpgradeLevel})";
+            autoClickRateText.text = $"Auto-click: " +
+                                     $"{autoClicksPerSecond * _currentUpgradeLevel}/sec (Level {_currentUpgradeLevel})";
         }
         else
         {
@@ -88,14 +90,14 @@ public class GameManager : MonoBehaviour
     private void SaveGame()
     {
         PlayerPrefs.SetFloat("TotalClicks", _totalClicks);
-        PlayerPrefs.SetInt("UpgradeLevel", _currentUpgradeLevel);
+        PlayerPrefs.SetInt("AddClickLevel", _currentUpgradeLevel);
         PlayerPrefs.Save();
     }
 
     private void LoadGame()
     {
         _totalClicks = PlayerPrefs.GetFloat("TotalClicks", 0);
-        _currentUpgradeLevel = PlayerPrefs.GetInt("UpgradeLevel", 0);
+        _currentUpgradeLevel = PlayerPrefs.GetInt("AddClickLevel", 0);
         _hasUpgrade = _currentUpgradeLevel > 0;
         _nextUpgradeCost = _hasUpgrade ?
             (int)(minimumClicksToUnlock * Mathf.Pow(upgradeCostMultiplier, _currentUpgradeLevel)) :

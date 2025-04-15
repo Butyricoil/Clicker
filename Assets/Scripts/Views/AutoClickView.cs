@@ -1,15 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-// Это скрипт представления, который отвечает за отображение информации об автоматическом клике.
+// Это скрипт представления, который отвечает за отображение информации об автоклике.
 public class AutoClickView : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _autoClickRateText;
+    [SerializeField] private Button _upgradeButton;
+    [SerializeField] private TMP_Text _levelText;
+    [SerializeField] private TMP_Text _rateText;
+    [SerializeField] private TMP_Text _costText;
 
-    public void UpdateAutoClickInfo(int level, int clicksPerSecond)
+    public Button UpgradeButton => _upgradeButton;
+
+    public void UpdateInfo(int level, int rate, int cost, bool canAfford)
     {
-        _autoClickRateText.text = level > 0
-            ? $"Auto-click: {clicksPerSecond * level}/sec (Level {level})"
-            : "Auto-click: Locked";
+        _levelText.text = $"Level: {level}";
+        _rateText.text = $"Rate: {rate}/sec";
+        _costText.text = $"Cost: {cost}";
+        _upgradeButton.interactable = canAfford;
     }
 }
