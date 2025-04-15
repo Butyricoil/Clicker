@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Это скрипт, который хранит настройки игры. Он используется для хранения базовых значений и множителей.
 [CreateAssetMenu(menuName = "GameSettings")]
 public class GameSettings : ScriptableObject
 {

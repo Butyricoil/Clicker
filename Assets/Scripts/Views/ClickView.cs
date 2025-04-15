@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Это скрипт представления, который отвечает за отображение информации о кликах.
 public class ClickerView : MonoBehaviour
 {
     [SerializeField] private Button _clickButton;

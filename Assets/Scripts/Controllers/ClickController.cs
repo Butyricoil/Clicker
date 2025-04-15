@@ -1,4 +1,4 @@
-﻿
+﻿// Это файл ClickController.cs, который отвечает за логику кликов в игре.
 public class ClickerController
 {
     private readonly GameModel _model;

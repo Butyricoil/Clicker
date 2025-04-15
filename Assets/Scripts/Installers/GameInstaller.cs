@@ -2,6 +2,7 @@
 using UnityEngine.Serialization;
 using Zenject;
 
+// Это инсталлятор, который отвечает за связывание зависимостей в игре. Привязан к Dependency Container.
 public class GameInstaller : MonoInstaller
 {
     [SerializeField] private GameSettings _settings;

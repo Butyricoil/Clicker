@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
+// Это скрипт представления, который отвечает за отображение информации об автоматическом клике.
 public class AutoClickView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _autoClickRateText;

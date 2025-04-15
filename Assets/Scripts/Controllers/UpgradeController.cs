@@ -1,4 +1,4 @@
-﻿
+﻿// Это скрипт контроллера, который управляет улучшениями в игре.
 public class UpgradeController
 {
     private readonly GameModel _model;

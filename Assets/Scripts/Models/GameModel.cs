@@ -1,5 +1,6 @@
 ﻿using System;
 
+// Это скрипт модели, который хранит данные о состоянии игры.
 [Serializable]
 public class GameModel
 {
