@@ -492,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade
+  m_text: AddClicks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc9673403784e34a189afb81889204a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeButton: {fileID: 763335675}
+  _autoClickButton: {fileID: 763335675}
   _levelText: {fileID: 1097133609}
   _rateText: {fileID: 1847475157}
   _costText: {fileID: 1438387187}
@@ -1117,8 +1117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d702dbc268d44cf89a5c39ae86c410c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeButton: {fileID: 926660638}
-  _upgradeText: {fileID: 352280158}
+  _addClickButton: {fileID: 926660638}
+  _addClickText: {fileID: 352280158}
 --- !u!1 &1097133607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 1438387188}
   - component: {fileID: 1438387187}
   m_Layer: 5
-  m_Name: AutoClicks(text)
+  m_Name: CoastText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

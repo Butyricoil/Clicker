@@ -1,8 +1,7 @@
 ﻿using System;
 
 // Это скрипт модели, который хранит данные о состоянии игры.
-[Serializable]
-public class GameModel
+[Serializable] public class GameModel
 {
     // Параметры кликов
     public int ClicksCount;
@@ -26,6 +25,7 @@ public class GameModel
         OnClicksChanged?.Invoke(ClicksCount);
     }
 
+
     public void Upgrade(int cost)
     {
         ClicksCount -= cost;
@@ -46,5 +46,10 @@ public class GameModel
     public int GetAutoClicksAmount()
     {
         return AutoClickLevel * 2; // Например, 2 клика за уровень
+    }
+
+    public void InvokeOnClicksChanged(int clicksCount)
+    {
+        OnClicksChanged?.Invoke(clicksCount);
     }
 }

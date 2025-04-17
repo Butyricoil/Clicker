@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Zenject;
-using System;
 
 // Это контроллер, который отвечает за автоматическое нажатие.
 public class AutoClickController : ITickable
@@ -19,7 +18,7 @@ public class AutoClickController : ITickable
         {
             _model.ClicksCount += _model.GetAutoClicksAmount();
             _model.LastAutoClickTime = Time.time;
-            // _model.OnClicksChanged?.Invoke(_model.ClicksCount);
+            _model.InvokeOnClicksChanged(_model.ClicksCount);
         }
     }
 }

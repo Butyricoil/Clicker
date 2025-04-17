@@ -1,18 +1,19 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // Это скрипт представления, который отвечает за отображение информации об обновлении.
 public class AddClickView : MonoBehaviour
 {
-    [SerializeField] private Button _upgradeButton;
-    [SerializeField] private TMP_Text _upgradeText;
+    [SerializeField] private Button _addClickButton;
+    [SerializeField] private TMP_Text _addClickText;
 
-    public Button UpgradeButton => _upgradeButton;
+    public Button AddClickButton => _addClickButton;
 
     public void UpdateUpgradeInfo(int cost, bool canAfford)
     {
-        _upgradeText.text = $"Upgrade ({cost})";
-        _upgradeButton.interactable = canAfford;
+        _addClickText.text = $"Upgrade ({cost})";
+        _addClickButton.interactable = canAfford;
     }
 }

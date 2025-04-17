@@ -17,7 +17,7 @@ public class GameInitializer : MonoBehaviour
     {
         _clickerView.ClickButton.onClick.AddListener(() => { _clickerController.AddClick(); });
 
-        _addClickView.UpgradeButton.onClick.AddListener(() => { _upgradeController.Upgrade(); });
+        _addClickView.AddClickButton.onClick.AddListener(() => { _upgradeController.Upgrade(); });
 
         _model.OnClicksChanged += clicks =>
         {
@@ -45,7 +45,7 @@ public class GameInitializer : MonoBehaviour
             _upgradeController.CanUpgrade()
         );
 
-        _autoClickView.UpgradeButton.onClick.AddListener(() => { _autoClickUpgradeController.Upgrade(); });
+        _autoClickView.AutoClickButton.onClick.AddListener(() => { _autoClickUpgradeController.Upgrade(); });
 
         _model.OnAutoClickUpgraded += level =>
         {
