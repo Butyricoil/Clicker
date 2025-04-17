@@ -1,10 +1,10 @@
 ﻿// Это скрипт контроллера, который управляет улучшениями в игре.
-public class UpgradeController
+public class AddClickController
 {
     private readonly GameModel _model;
     private readonly GameSettings _settings;
 
-    public UpgradeController(GameModel model, GameSettings settings)
+    public AddClickController(GameModel model, GameSettings settings)
     {
         _model = model;
         _settings = settings;

@@ -48,7 +48,7 @@
         return AutoClickLevel * 2; // Например, 2 клика за уровень
     }
 
-    public void InvokeOnClicksChanged(int clicksCount)
+    public void InvokeOnClicksChanged(int clicksCount) // ? правильно ли
     {
         OnClicksChanged?.Invoke(clicksCount);
     }

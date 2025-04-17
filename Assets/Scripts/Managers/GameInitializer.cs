@@ -4,7 +4,7 @@ using Zenject;
 public class GameInitializer : MonoBehaviour
 {
     [Inject] private ClickerController _clickerController;
-    [Inject] private UpgradeController _upgradeController;
+    [Inject] private AddClickController _addClickController;
     [Inject] private AutoClickUpgradeController _autoClickUpgradeController;
 
     [Inject] private ClickerView _clickerView;
@@ -17,22 +17,22 @@ public class GameInitializer : MonoBehaviour
     {
         _clickerView.ClickButton.onClick.AddListener(() => { _clickerController.AddClick(); });
 
-        _addClickView.AddClickButton.onClick.AddListener(() => { _upgradeController.Upgrade(); });
+        _addClickView.AddClickButton.onClick.AddListener(() => { _addClickController.Upgrade(); });
 
         _model.OnClicksChanged += clicks =>
         {
             _clickerView.UpdateClicks(clicks);
             _addClickView.UpdateUpgradeInfo(
-                _upgradeController.GetUpgradeCost(),
-                _upgradeController.CanUpgrade()
+                _addClickController.GetUpgradeCost(),
+                _addClickController.CanUpgrade()
             );
         };
 
         _model.OnUpgradeChanged += level =>
         {
             _addClickView.UpdateUpgradeInfo(
-                _upgradeController.GetUpgradeCost(),
-                _upgradeController.CanUpgrade()
+                _addClickController.GetUpgradeCost(),
+                _addClickController.CanUpgrade()
             );
         };
 
@@ -41,8 +41,8 @@ public class GameInitializer : MonoBehaviour
         _clickerView.UpdateClicks(_model.ClicksCount);
         _clickerView.UpdateClicksPerTap(_model.ClicksPerTap);
         _addClickView.UpdateUpgradeInfo(
-            _upgradeController.GetUpgradeCost(),
-            _upgradeController.CanUpgrade()
+            _addClickController.GetUpgradeCost(),
+            _addClickController.CanUpgrade()
         );
 
         _autoClickView.AutoClickButton.onClick.AddListener(() => { _autoClickUpgradeController.Upgrade(); });

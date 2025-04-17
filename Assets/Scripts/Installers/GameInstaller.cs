@@ -26,7 +26,7 @@ public class GameInstaller : MonoInstaller
 
         // Биндим контроллеры
         Container.BindInterfacesAndSelfTo<ClickerController>().AsSingle();
-        Container.BindInterfacesAndSelfTo<UpgradeController>().AsSingle();
+        Container.BindInterfacesAndSelfTo<AddClickController>().AsSingle();
         Container.BindInterfacesAndSelfTo<AutoClickController>().AsSingle();
         Container.BindInterfacesAndSelfTo<AutoClickUpgradeController>().AsSingle();
     }

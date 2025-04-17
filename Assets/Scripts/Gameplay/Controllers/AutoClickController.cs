@@ -18,7 +18,7 @@ public class AutoClickController : ITickable
         {
             _model.ClicksCount += _model.GetAutoClicksAmount();
             _model.LastAutoClickTime = Time.time;
-            _model.InvokeOnClicksChanged(_model.ClicksCount);
+            _model.InvokeOnClicksChanged(_model.ClicksCount); // ? правильно ли
         }
     }
 }
